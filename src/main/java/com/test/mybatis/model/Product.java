@@ -4,15 +4,15 @@ public class Product {
 
 	public Long id;
 	public String name;
-	public String desc;
+	public String description;
 
 	public Product() {
 	}
 
-	public Product(Long id, String name, String desc) {
+	public Product(Long id, String name, String description) {
 		this.id = id;
 		this.name = name;
-		this.desc = desc;
+		this.description = description;
 	}
 
 	public Long getId() {
@@ -32,11 +32,11 @@ public class Product {
 	}
 
 	public String getDesc() {
-		return desc;
+		return description;
 	}
 
-	public void setDesc(String desc) {
-		this.desc = desc;
+	public void setDesc(String description) {
+		this.description = description;
 	}
 
 }

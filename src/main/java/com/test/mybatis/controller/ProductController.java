@@ -27,7 +27,7 @@ public class ProductController {
 	}
 
 	@PostMapping(value = SAVE_PRODUCT_END_POINT, produces = MediaType.APPLICATION_JSON_VALUE)
-	public long saveProduct(@RequestBody Product product) {
+	public Long saveProduct(@RequestBody Product product) {
 		return productMapper.saveProducts(product);
 	}
 

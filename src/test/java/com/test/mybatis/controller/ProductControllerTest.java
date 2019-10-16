@@ -39,6 +39,9 @@ public class ProductControllerTest {
 	protected MockMvc mvc;
 
 	@Autowired
+	private ObjectMapper objectMapper;
+
+	@Autowired
 	private ProductController controller;
 
 	@MockBean
@@ -67,10 +70,7 @@ public class ProductControllerTest {
 	@Test
 	public void testing_product_save_Controller() throws Exception {
 		product = new Product(34L, "carne", "alimento");
-		ObjectMapper mapper = new ObjectMapper();
-		ObjectWriter ow = mapper.writer().withDefaultPrettyPrinter();
-		String requestJson = ow.writeValueAsString(product);
-		System.out.println(requestJson);
+		String requestJson = objectMapper.writeValueAsString(product);
 		mvc.perform(post(SAVE_PRODUCT_END_POINT).contentType(MediaType.APPLICATION_JSON_VALUE).content(requestJson))
 				.andExpect(status().isOk());
 
